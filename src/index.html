@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip calculator</title>
+    <link rel="shortcut-icon" href="../images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body dir="ltr" class="bg-[hsl(185,41%,84%)] h-full overflow-y-auto">
+
+    <header class="w-full flex items-center justify-center ">
+
+        <h1 class="font-bold text-2xl tracking-[10px] leading-[37px] py-[10%] w-[30%] text-[hsl(186,23%,32%)] text-center lg:pt-[10%] lg:pb-[5%]">SPLI <br> TTER</h1>
+
+    </header>
+
+    <main class="grid grid-cols-1 grid-rows-[auto_auto] lg:grid-cols-2 lg:grid-rows-1 lg:gap-x-[5%] items-center bg-white w-full lg:max-w-[1000px] lg:mx-auto xl:max-w-[1024px] rounded-t-3xl py-[8%] px-[7%] lg:p-[3%] lg:rounded-3xl lg:mb-[10%]">
+
+        <!-- Tipping input details -->
+        <section class="w-full max-w-[768px] mx-auto lg:max-w-full lg:py-[2%]">
+
+            <form action="#" method="post">
+
+                <!-- label -->
+                <label for="bill" class="font-bold text-[hsl(186,23%,43%)]">Bill</label>
+
+                <!-- bill-input wrap -->
+                <div class="relative mt-[2%] mb-[9.7%]">
+
+                    <img src="../images/icon-dollar.svg" alt="person-icon" class="absolute left-3 top-[50%] translate-y-[-50%]">
+                    
+                    <!-- bill input -->
+                    <input type="number" name="bill" id="bill" step="0.01" placeholder="Enter bill" class="text-right text-2xl py-[6px] px-3 bg-[hsl(189,41%,97%)] rounded-sm text-[hsl(183,100%,15%)] font-bold w-full placeholder:text-[hsl(185,15%,60%)] placeholder:text-sm focus:outline-2 focus:outline-[hsl(183,100%,15%)]">
+
+                </div>
+
+                <!-- label-->
+                <label for="tip-options" class="font-bold text-[hsl(186,23%,43%)]">Select Tip %</label>
+
+                <!-- tip percentage options -->
+                <div class="w-full grid grid-cols-2 grid-rows-3 lg:grid-rows-2 lg:grid-cols-3 lg:gap-y-5 lg:gap-x-4 gap-x-5 gap-y-4 text-2xl font-bold mt-[2%] mb-[11.5%] lg:mb-[9%]" id="tip-options">
+
+                    <input type="button" value="5%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+
+                    <input type="button" value="10%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+
+                    <input type="button" value="15%"  class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+
+                    <input type="button" value="25%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+
+                    <input type="button" value="50%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+
+                    <label for="Custom" class="block w-full">
+                        <input type="number" id="Custom" placeholder="Custom" class="w-full bg-[hsl(189,41%,97%)] text-[hsl(183,100%,15%)] placeholder:text-[hsl(186,20%,42%)] text-right px-6 py-[9px] rounded-sm focus:outline-2 focus:outline-[hsl(183,100%,15%)]">
+                    </label>
+                    
+                </div>
+
+                <!-- label -->
+                <label for="persons" class="font-bold text-[hsl(186,23%,43%)] ">Number of People</label>
+
+                <!-- people number wrap -->
+                <div class="relative mt-[2%]">
+
+                    <img src="../images/icon-person.svg" alt="person-icon" class="absolute left-3 top-[50%] translate-y-[-50%]">
+                    
+                    <!-- people number -->
+                    <input type="number" name="no-of-persons" id="persons" step="0.01" placeholder="Enter number of persons" class="text-right text-2xl py-1.5 px-3 bg-[hsl(189,41%,97%)] rounded-sm text-[hsl(183,100%,15%)] font-bold w-full placeholder:text-[hsl(185,15%,60%)] placeholder:text-sm focus:outline-2 focus:outline-[hsl(183,100%,15%)]">
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- calculated tip details -->
+        <section class="w-full max-w-[768px] mx-auto lg:max-w-full bg-[hsl(183,100%,15%)] pt-[10%] pb-[7%] px-[5%] font-bold text-white rounded-2xl mt-8 lg:mt-0 lg:self-stretch lg: flex lg:flex-col lg:justify-between">
+
+            <div>
+                <!-- tip amount -->
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex flex-col">
+                        
+                        <span class="tipAmount">Tip Amount</span>
+                        <span class="perPerson text-[hsl(184,14%,56%)]">/ person</span>
+
+                    </div>
+
+                    <div class="font-black text-[hsl(172,67%,45%)] text-3xl">
+                        $<span class="tipperPerson text-4xl">0</span>
+                    </div>
+                </div>
+
+                <!-- total amount -->
+                <div class="flex justify-between items-center mb-8 lg:mb-0">
+                    <div class="flex flex-col">
+                        
+                        <span class="totalAmount">Total Amount</span>
+                        <span class="perPerson text-[hsl(184,14%,56%)]">/ person</span>
+
+                    </div>
+
+                    <div class="font-black text-[hsl(172,67%,45%)] text-3xl">
+                        $<span class="totalperPerson text-4xl">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="reset" class="reset bg-[hsl(172,67%,45%)] text-[hsl(183,100%,15%)] w-full py-[3%] text-xl rounded-sm">RESET</button>
+
+        </section>
+
+    </main>
+
+</body>
+
+<script src="main.js"></script>
+</html>

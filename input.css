@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@theme{
+    /* --font-display: "Satoshi", "sans-serif"; */
+}
+
+*{
+    font-family: "Space Mono", serif;
+    font-style: normal;
+}
