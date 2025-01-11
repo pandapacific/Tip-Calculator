@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="lg:grid lg:place-content-center">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 
-<body dir="ltr" class="bg-[hsl(185,41%,84%)] h-full overflow-y-auto">
+<body dir="ltr" class="bg-[hsl(185,41%,84%)] h-full lg:aspect-[1.40625]">
 
     <header class="w-full flex items-center justify-center ">
 
@@ -19,7 +19,7 @@
 
     </header>
 
-    <main class="grid grid-cols-1 grid-rows-[auto_auto] lg:grid-cols-2 lg:grid-rows-1 lg:gap-x-[5%] items-center bg-white w-full lg:max-w-[1000px] lg:mx-auto xl:max-w-[1024px] rounded-t-3xl py-[8%] px-[7%] lg:p-[3%] lg:rounded-3xl lg:mb-[10%]">
+    <main class="grid grid-cols-1 grid-rows-[auto_auto] lg:grid-cols-2 lg:grid-rows-1 lg:gap-x-[5%] items-center bg-white w-full lg:max-w-[1000px] lg:mx-auto xl:max-w-[1024px] rounded-t-3xl py-[8%] px-[7%] lg:p-[3%] lg:rounded-3xl lg:mb-[20%]">
 
         <!-- Tipping input details -->
         <section class="w-full max-w-[768px] mx-auto lg:max-w-full lg:py-[2%]">
@@ -27,7 +27,10 @@
             <form action="#" method="post">
 
                 <!-- label -->
-                <label for="bill" class="font-bold text-[hsl(186,23%,43%)]">Bill</label>
+                <label for="bill" class="font-bold flex justify-between items-center text-[hsl(186,23%,43%)]">
+                   <span> Bill</span>
+                   <span class="text-orange-500 hidden">Can't be zero</span>
+                </label>
 
                 <!-- bill-input wrap -->
                 <div class="relative mt-[2%] mb-[9.7%]">
@@ -35,34 +38,40 @@
                     <img src="../images/icon-dollar.svg" alt="person-icon" class="absolute left-3 top-[50%] translate-y-[-50%]">
                     
                     <!-- bill input -->
-                    <input type="number" name="bill" id="bill" step="0.01" placeholder="Enter bill" class="text-right text-2xl py-[6px] px-3 bg-[hsl(189,41%,97%)] rounded-sm text-[hsl(183,100%,15%)] font-bold w-full placeholder:text-[hsl(185,15%,60%)] placeholder:text-sm focus:outline-2 focus:outline-[hsl(183,100%,15%)]">
+                    <input type="number" name="bill" id="bill" step="0.01" placeholder="0" class="text-right text-2xl py-[6px] px-3 bg-[hsl(189,41%,97%)] rounded-sm text-[hsl(183,100%,15%)] font-bold w-full placeholder:text-[hsl(185,15%,60%)] focus:outline-2 focus:outline-[hsl(183,100%,15%)] cursor-pointer hover:outline-2 hover:outline-[hsl(184,14%,56%)]">
 
                 </div>
 
                 <!-- label-->
-                <label for="tip-options" class="font-bold text-[hsl(186,23%,43%)]">Select Tip %</label>
+                <label for="tip-options" class="font-bold flex justify-between items-center text-[hsl(186,23%,43%)]">
+                    <span> Select Tip %</span>
+                    <span class="text-orange-500 hidden">Can't be zero</span>
+                </label>
 
                 <!-- tip percentage options -->
                 <div class="w-full grid grid-cols-2 grid-rows-3 lg:grid-rows-2 lg:grid-cols-3 lg:gap-y-5 lg:gap-x-4 gap-x-5 gap-y-4 text-2xl font-bold mt-[2%] mb-[11.5%] lg:mb-[9%]" id="tip-options">
 
-                    <input type="button" value="5%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+                    <input type="button" value="5%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:bg-[hsl(172,67%,75%)] hover:text-[hsl(183,100%,15%)] cursor-pointer">
 
-                    <input type="button" value="10%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+                    <input type="button" value="10%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:bg-[hsl(172,67%,75%)] hover:text-[hsl(183,100%,15%)]">
 
-                    <input type="button" value="15%"  class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+                    <input type="button" value="15%"  class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:bg-[hsl(172,67%,75%)] hover:text-[hsl(183,100%,15%)]">
 
-                    <input type="button" value="25%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+                    <input type="button" value="25%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:bg-[hsl(172,67%,75%)] hover:text-[hsl(183,100%,15%)]">
 
-                    <input type="button" value="50%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:brightness-130 focus:brightness-100">
+                    <input type="button" value="50%" class="bg-[hsl(183,100%,15%)] text-white px-6 py-[9px] rounded-sm focus:bg-[hsl(172,67%,45%)] focus:text-[hsl(183,100%,15%)] hover:bg-[hsl(172,67%,75%)] hover:text-[hsl(183,100%,15%)]">
 
                     <label for="Custom" class="block w-full">
-                        <input type="number" id="Custom" placeholder="Custom" class="w-full bg-[hsl(189,41%,97%)] text-[hsl(183,100%,15%)] placeholder:text-[hsl(186,20%,42%)] text-right px-6 py-[9px] rounded-sm focus:outline-2 focus:outline-[hsl(183,100%,15%)]">
+                        <input type="number" id="Custom" placeholder="Custom" class="placeholder:text-xl w-full bg-[hsl(189,41%,97%)] text-[hsl(183,100%,15%)] placeholder:text-[hsl(186,20%,42%)] text-right px-6 py-[9px] rounded-sm focus:outline-2 focus:outline-[hsl(183,100%,15%)] cursor-pointer hover:outline-2 hover:outline-[hsl(184,14%,56%)]">
                     </label>
                     
                 </div>
 
                 <!-- label -->
-                <label for="persons" class="font-bold text-[hsl(186,23%,43%)] ">Number of People</label>
+                <label for="persons" class="font-bold flex justify-between items-center text-[hsl(186,23%,43%)]">
+                    <span> Number of People</span>
+                    <span class="text-orange-500 hidden">Can't be zero</span>
+                </label>
 
                 <!-- people number wrap -->
                 <div class="relative mt-[2%]">
@@ -70,7 +79,7 @@
                     <img src="../images/icon-person.svg" alt="person-icon" class="absolute left-3 top-[50%] translate-y-[-50%]">
                     
                     <!-- people number -->
-                    <input type="number" name="no-of-persons" id="persons" step="0.01" placeholder="Enter number of persons" class="text-right text-2xl py-1.5 px-3 bg-[hsl(189,41%,97%)] rounded-sm text-[hsl(183,100%,15%)] font-bold w-full placeholder:text-[hsl(185,15%,60%)] placeholder:text-sm focus:outline-2 focus:outline-[hsl(183,100%,15%)]">
+                    <input type="number" name="no-of-persons" id="persons" step="0.01" placeholder="0" class="text-right text-2xl py-1.5 px-3 bg-[hsl(189,41%,97%)] rounded-sm text-[hsl(183,100%,15%)] font-bold w-full placeholder:text-[hsl(185,15%,60%)] focus:outline-2 focus:outline-[hsl(183,100%,15%)] cursor-pointer hover:outline-2 hover:outline-[hsl(184,14%,56%)]">
 
                 </div>
 
@@ -79,7 +88,7 @@
         </section>
 
         <!-- calculated tip details -->
-        <section class="w-full max-w-[768px] mx-auto lg:max-w-full bg-[hsl(183,100%,15%)] pt-[10%] pb-[7%] px-[5%] font-bold text-white rounded-2xl mt-8 lg:mt-0 lg:self-stretch lg: flex lg:flex-col lg:justify-between">
+        <section class="w-full max-w-[768px] mx-auto lg:max-w-full bg-[hsl(183,100%,15%)] pt-[10%] pb-[7%] px-[5%] font-bold text-white rounded-2xl mt-8 lg:mt-0 lg:self-stretch lg:flex lg:flex-col lg:justify-between">
 
             <div>
                 <!-- tip amount -->
@@ -111,7 +120,7 @@
                 </div>
             </div>
 
-            <button type="reset" class="reset bg-[hsl(172,67%,45%)] text-[hsl(183,100%,15%)] w-full py-[3%] text-xl rounded-sm">RESET</button>
+            <button type="reset" class="reset bg-[hsl(172,67%,45%)] cursor-pointer active:brightness-90 text-[hsl(183,100%,15%)] w-full py-[3%] text-xl rounded-sm hover:bg-[hsl(172,67%,75%)] focus:bg-[]">RESET</button>
 
         </section>
 
